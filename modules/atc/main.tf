@@ -84,6 +84,7 @@ data "template_file" "atc" {
     authorized_worker_keys    = "${file("${var.concourse_keys}/authorized_worker_keys")}"
     encryption_key            = "${var.encryption_key}"
     old_encryption_key        = "${var.old_encryption_key}"
+    atc_parameters            = "${var.atc_parameters}"
   }
 }
 
