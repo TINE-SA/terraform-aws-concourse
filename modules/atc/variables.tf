@@ -158,3 +158,8 @@ variable "tags" {
   type        = "map"
   default     = {}
 }
+
+variable "atc_parameters" {
+  description = "Additional parameters for the atc command"
+  default     = ""
+}
