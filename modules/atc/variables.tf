@@ -36,7 +36,7 @@ variable "max_size" {
 
 variable "instance_type" {
   description = "Type of instance to provision for the Concourse ATC."
-  default     = "t3.small"
+  default     = "m5.large"
 }
 
 variable "instance_ami" {
