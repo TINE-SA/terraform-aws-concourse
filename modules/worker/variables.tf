@@ -35,7 +35,7 @@ variable "instance_ami" {
 
 variable "instance_key" {
   description = "The key name that should be used for the worker instances."
-  default     = ""
+  default     = "concourse-worker-ec2-instances"
 }
 
 variable "instance_volume_size" {

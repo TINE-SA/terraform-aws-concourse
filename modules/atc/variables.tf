@@ -45,7 +45,7 @@ variable "instance_ami" {
 
 variable "instance_key" {
   description = "The key name that should be used for the ATC instances."
-  default     = ""
+  default     = "concourse-ec2-instances"
 }
 
 variable "concourse_keys" {
