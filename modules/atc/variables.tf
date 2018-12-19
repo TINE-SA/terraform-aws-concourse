@@ -39,11 +39,6 @@ variable "instance_type" {
   default     = "m5.large"
 }
 
-variable "instance_volume_size" {
-  description = "The size of the volume in gigabytes."
-  default     = "30"
-}
-
 variable "instance_ami" {
   description = "The EC2 image ID to launch. See the include packer image."
 }

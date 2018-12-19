@@ -51,7 +51,6 @@ module "atc" {
   instance_ami      = "${var.instance_ami}"
   instance_key      = "${var.instance_key}"
   instance_policy   = "${data.aws_iam_policy_document.atc.json}"
-  instance_volume_size= "${var.instance_volume_size}"
   await_signal      = "true"
   pause_time        = "PT5M"
   health_check_type = "ELB"
