@@ -75,6 +75,7 @@ data "template_file" "atc" {
     prometheus_bind_port   = "${var.prometheus_enabled == "true" ? "Environment=\"CONCOURSE_PROMETHEUS_BIND_PORT=${var.prometheus_port}\"" : ""}"
     start_node_exporter    = "${var.prometheus_enabled == "true" ? "systemctl enable node_exporter.service --now" : "echo \"Prometheus disabled, not starting node-exporter\""}"
     concourse_web_host     = "${lower(var.web_protocol)}://${var.domain != "" ? var.domain : module.external_lb.dns_name}:${var.web_port}"
+    datadog_api_key        = "${var.datadog_api_key}"
     postgres_host          = "${var.postgres_host}"
     postgres_port          = "${var.postgres_port}"
     postgres_username      = "${var.postgres_username}"
