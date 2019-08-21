@@ -55,6 +55,7 @@ write_files:
       ${github_users}
       ${github_teams}
 
+      Environment="CONCOURSE_DATADOG_API_KEY=${datadog_api_key}"
       Environment="CONCOURSE_POSTGRES_HOST=${postgres_host}"
       Environment="CONCOURSE_POSTGRES_PORT=${postgres_port}"
       Environment="CONCOURSE_POSTGRES_USER=${postgres_username}"
@@ -142,3 +143,5 @@ runcmd:
   - |
     /usr/local/scripts/cloudformation-signal.sh
     /opt/aws/bin/cfn-signal -e $? --stack ${stack_name} --resource AutoScalingGroup --region ${region}
+  - |  
+    DD_API_KEY=${datadog_api_key} bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/datadog-agent/master/cmd/agent/install_script.sh)"

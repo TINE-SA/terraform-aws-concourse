@@ -99,6 +99,10 @@ variable "github_teams" {
   default     = []
 }
 
+variable "datadog_api_key" {
+  description = "Datadogs API key for sending concourse metrics to Datadog."
+}
+
 variable "domain" {
   description = "The (domain) name of the record."
   default     = ""
