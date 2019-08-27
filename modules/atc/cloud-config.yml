@@ -56,6 +56,10 @@ write_files:
       ${github_teams}
 
       Environment="CONCOURSE_DATADOG_API_KEY=${datadog_api_key}"
+      Environment="CONCOURSE_DATADOG_AGENT_HOST=${datadog_agent_host}"
+      Environment="CONCOURSE_DATADOG_AGENT_PORT=${datadog_agent_port}"
+      Environment="CONCOURSE_DATADOG_PREFIX=${datadog_prefix}"
+
       Environment="CONCOURSE_POSTGRES_HOST=${postgres_host}"
       Environment="CONCOURSE_POSTGRES_PORT=${postgres_port}"
       Environment="CONCOURSE_POSTGRES_USER=${postgres_username}"
