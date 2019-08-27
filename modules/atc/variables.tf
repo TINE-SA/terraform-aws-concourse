@@ -103,6 +103,21 @@ variable "datadog_api_key" {
   description = "Datadogs API key for sending concourse metrics to Datadog."
 }
 
+variable "datadog_agent_host" {
+  description = "Datadog agent host (which is localhost)."
+  default     = "127.0.0.1"
+}
+
+variable "datadog_agent_port" {
+  description = "Datadog agent port."
+  default     = "8125"
+}
+
+variable "datadog_prefix" {
+  description = "Prefix on concourse metrics."
+  default     = "concourse.ci"
+}
+
 variable "domain" {
   description = "The (domain) name of the record."
   default     = ""
