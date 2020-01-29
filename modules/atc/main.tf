@@ -99,10 +99,6 @@ resource "aws_cloudwatch_log_group" "atc" {
   name = "${var.name_prefix}-atc"
 }
 
-data "aws_kms_key" "cmk_kms" {
-  key_id = "alias/openfarm_dev_cmk"
-}
-
 data "aws_iam_policy_document" "atc" {
   statement {
     effect = "Allow"
