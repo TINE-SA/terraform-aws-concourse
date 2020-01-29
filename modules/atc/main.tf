@@ -99,6 +99,10 @@ resource "aws_cloudwatch_log_group" "atc" {
   name = "${var.name_prefix}-atc"
 }
 
+data "aws_kms_key" "cmk_kms" {
+  key_id = "alias/openfarm_dev_cmk"
+}
+
 data "aws_iam_policy_document" "atc" {
   statement {
     effect = "Allow"
@@ -148,6 +152,23 @@ data "aws_iam_policy_document" "atc" {
 
     resources = [
       "arn:aws:secretsmanager:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:secret:/concourse*",
+    ]
+  }
+
+  statement {
+    effect = "Allow"
+  
+    actions = [
+      "kms:Encrypt",
+      "kms:Decrypt",
+      "kms:ReEncrypt*",
+      "kms:GenerateDataKey*",
+      "kms:CreateGrant",
+      "kms:DescribeKey",
+    ]
+
+    resources = [
+      "${data.aws_kms_key.cmk_kms.arn}"
     ]
   }
 }
