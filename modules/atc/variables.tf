@@ -187,3 +187,18 @@ variable "atc_parameters" {
   description = "Additional parameters for the atc command"
   default     = ""
 }
+
+variable "concourse_cache_enabled" {
+  description = "Enable caching for concourse secrets"
+  default     = "true"
+}
+
+variable "concourse_secret_cache_duration" {
+  description = "Duration for secrets caching"
+  default     = "24h"
+}
+
+variable "concourse_secret_not_found_cache_duration" {
+  description = "Duration for secrets not found caching"
+  default     = "24h"
+}

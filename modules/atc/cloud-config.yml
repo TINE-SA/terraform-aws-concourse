@@ -66,6 +66,10 @@ write_files:
       Environment="CONCOURSE_POSTGRES_PASSWORD=${postgres_password}"
       Environment="CONCOURSE_POSTGRES_DATABASE=${postgres_database}"
 
+      Environment="CONCOURSE_SECRET_CACHE_ENABLED=${concourse_cache_enabled}"
+      Environment="CONCOURSE_SECRET_CACHE_DURATION=${concourse_secret_cache_duration}"
+      Environment="CONCOURSE_SECRET_CACHE_DURATION_NOTFOUND=${concourse_secret_not_found_cache_duration}"
+
       Environment="CONCOURSE_EXTERNAL_URL=${concourse_web_host}"
       Environment="CONCOURSE_LOG_LEVEL=${log_level}"
       Environment="CONCOURSE_TSA_LOG_LEVEL=${log_level}"
