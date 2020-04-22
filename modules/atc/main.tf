@@ -92,6 +92,9 @@ data "template_file" "atc" {
     encryption_key         = "${var.encryption_key}"
     old_encryption_key     = "${var.old_encryption_key}"
     atc_parameters         = "${var.atc_parameters}"
+    concourse_cache_enabled = "${var.concourse_cache_enabled}"
+    concourse_secret_cache_duration = "${var.concourse_secret_cache_duration}"
+    concourse_secret_not_found_cache_duration = "${var.concourse_secret_not_found_cache_duration}"
   }
 }
 
