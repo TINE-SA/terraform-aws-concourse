@@ -202,3 +202,8 @@ variable "concourse_secret_not_found_cache_duration" {
   description = "Duration for secrets not found caching"
   default     = "24h"
 }
+
+variable "placement_strategy" {
+  description = "Move worker container to free worker's"
+  default     = "fewest-build-containers"
+}
