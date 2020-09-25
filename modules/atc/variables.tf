@@ -204,6 +204,6 @@ variable "concourse_secret_not_found_cache_duration" {
 }
 
 variable "placement_strategy" {
-  description = "Move worker container to free worker's"
+  description = "Move worker container to free workers"
   default     = "fewest-build-containers"
 }
