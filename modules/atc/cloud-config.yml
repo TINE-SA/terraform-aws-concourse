@@ -77,7 +77,6 @@ write_files:
       Environment="CONCOURSE_TSA_HOST_KEY=/concourse/keys/web/tsa_host_key"
       Environment="CONCOURSE_TSA_AUTHORIZED_KEYS=/concourse/keys/web/authorized_worker_keys"
       Environment="CONCOURSE_SESSION_SIGNING_KEY=/concourse/keys/web/session_signing_key"
-      Environment="CONCOURSE_ENCRYPTION_KEY=${encryption_key}"
 
       ${prometheus_bind_ip}
       ${prometheus_bind_port}
